@@ -27,7 +27,7 @@
     <Grid>
         <StackPanel>
             <DockPanel LastChildFill="True">
-                <TextBlock  DockPanel.Dock="Top" Text="{Binding Titulo}"></TextBlock>
+                <TextBlock  DockPanel.Dock="Top" Text="{Binding Titulo}"></TextBlock> 
                 <Button DockPanel.Dock="Right" HorizontalAlignment="Left" Click="Button_Click">Seleccionar</Button>
                 <TextBox IsReadOnly="{Binding SoloLectura}" Text="{Binding RutaSeleccionada, UpdateSourceTrigger=PropertyChanged}" Template="{DynamicResource TextBoxControlTemplate1}" ></TextBox>
             </DockPanel>

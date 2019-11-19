@@ -1,0 +1,51 @@
+﻿<Window x:Class="FolderBrowser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FolderBrowser"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0">
+            <local:UserControlPanel x:Name="PrimerPanel" Titulo="Directorio de trabajo" NuevaCarpeta="False" SoloLectura="True"></local:UserControlPanel>
+            <local:UserControlPanel x:Name="SegundoPanel" Titulo="Directorio temporal" NuevaCarpeta="False" SoloLectura="False"></local:UserControlPanel>
+            <local:UserControlPanel x:Name="TercerPanel" Titulo="Directorio de log" NuevaCarpeta="True" SoloLectura="True"></local:UserControlPanel>
+        </StackPanel>
+
+        <DockPanel Grid.Row="1">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <TextBlock>
+                    <Run Text="{Binding ElementName=PrimerPanel, Path=Titulo}"/>
+                    <Run Text=":  "/>
+                    <Run Text="{Binding ElementName=PrimerPanel, Path=RutaSeleccionada}"/>
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Top">
+                <TextBlock>
+                    <Run Text="{Binding ElementName=SegundoPanel, Path=Titulo}"/>
+                    <Run Text=":  "/>
+                    <Run Text="{Binding ElementName=SegundoPanel, Path=RutaSeleccionada}"/>
+                </TextBlock>                
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Top">
+                <TextBlock>
+                    <Run Text="{Binding ElementName=TercerPanel, Path=Titulo}"/>
+                    <Run Text=":  "/>
+                    <Run Text="{Binding ElementName=TercerPanel, Path=RutaSeleccionada}"/>
+                </TextBlock>
+            </StackPanel>
+        </DockPanel>
+        
+    </Grid>
+    
+    
+</Window>
